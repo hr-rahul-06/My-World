@@ -3,107 +3,83 @@
 *{
   margin: 0;
   padding: 0;
-  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 body{
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f4f4f4;
+  display: grid;
+  height: 100%;
+  place-items: center;
+  background: linear-gradient(375deg, darkred, black);
+   transform-style: preserve-3d;
 }
-.profile-card{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 370px;
-  width: 100%;
-  background: #fff;
-  border-radius: 24px;
-  padding: 25px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+.profile{
+  height: 400px;
+  width: 330px;
   position: relative;
+  perspective: 1000px;
 }
-.profile-card::before{
-  content: '';
+.profile .card{
+  height: 100%;
+  width: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 40%;
-  width: 100%;
-  background-color: darkred;
-  border-radius: 24px 24px 0 0;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+  transition: 0.7s cubic-bezier(0.4,0.2,0.2,1);
 }
-.image{
-  
-  position: relative;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  border: 3px solid darkred;
-  padding: 0 5px 5px 0;
+.profile:hover>.front{
+  transform: rotateY(-180deg);
 }
-.profile-img{
+.profile .card img{
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid white;
+  border-radius: 10px;
 }
-.text-data{
+.profile .back{
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #333;
+  justify-content: space-evenly;
+  transform: rotateY(180deg);
 }
-.name{
-  font-size: 22px;
+.profile:hover>.back{
+  transform: rotateY(0deg);
+}
+.profile .back img{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  padding: 5px;
+  background: grey;
+}
+.profile .back .info{
+  text-align: center;
+}
+.profile .back .info .title{
+  font-size: 35px;
   font-weight: 500;
 }
-.job{
-  font-size: 18px;
-  font-weight: 400;
-}
-.media-buttons{
+.profile .back ul{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 15px;
 }
-.link{
-  font-size: 25px;
-  height: 34px;
-  width: 34px;
-  display: flex;
-  align-items: center;
+.profile .back ul a{
+  display: block;
+  height: 40px;
+  width: 40px;
+  background: linear-gradient(375deg, darkred, black);
+  text-align: center;
   justify-content: center;
+  border: 3px solid transparent;
+  line-height: 45px;
+  margin: 0 5px;
   border-radius: 50%;
-  margin: 0 8px;
-  color: #fff;
-  background-color: darkred;
-  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease-in;
 }
-.buttons{
-  display: flex;
-  align-items: center;
-  margin-top: 25px;
-}
-.button{
-  color: #fff;
-  font-size: 14px;
-  font-weight: 400;
-  border: none;
-  border: 3px solid #fff;
-  border-radius: 24px;
-  margin: 0 10px;
-  padding: 8px 24px ;
-  background-color: darkred;
-  cursor: pointer;
-  transition: all 0.2s ease-in;
-}
-.button:hover{
-  background-color: #fff;
+.profile .back ul a:hover{
+  background: none;
   color: darkred;
   border-color: darkred;
 }

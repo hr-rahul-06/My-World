@@ -14,7 +14,7 @@ body{
   overflow-x: hidden;
 }
 a{
-  color: white;
+  color: darkgrey;
   padding:4px 8px;
   border-radius: 25px;
   transition: 0.1s all ease-in;
@@ -37,6 +37,7 @@ header{
 }
 a:hover{
   background-color: #fe83ff;
+  color: white;
 }
 .hero{
   position: relative;
@@ -89,4 +90,6 @@ a:hover{
 @keyframes forHeader{
   from {opacity: 0}
   to {opacity: 1;}
+}
+
 }
