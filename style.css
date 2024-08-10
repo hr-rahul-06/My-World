@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  color: white;
+  background-color: black;
+  overflow-x: hidden;
+}
+a{
+  color: white;
+  padding:4px 8px;
+  border-radius: 25px;
+  transition: 0.1s all ease-in;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  animation: forHeader 2.5s ease-in 0s 1 normal;
+}
+a:hover{
+  background-color: #fe83ff;
+}
+.hero{
+  position: relative;
+  height: 25vh;
+  width: 100%;
+}
+.hero img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+}
+ #world{
+  object-fit: cover;
+  padding: 92px 0 ;
+  left: 30%;
+  display: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  animation: myworld 0.6s ease-in 0s 1 normal;
+}
+#purple, #moon{
+  mix-blend-mode: screen;
+  animation: moon 2s ease-in 0s 1 normal;
+}
+#cityleft{
+  animation: l-city 1.5s ease-in 0s 1 normal;
+}
+#cityright{
+  animation: r-city 1.5s ease-in 0s 1 normal;
+}
+@keyframes l-city{
+  from {left: -1000px;}
+  to {left: 0;}
+}
+@keyframes r-city{
+  from {left: -1000px;}
+  to {left: 0;}
+}
+@keyframes moon{
+  from {top: 500px; opacity: 0;}
+  to {top: 0; opacity: 1;}
+}
+@keyframes myworld{
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes forHeader{
+  from {opacity: 0}
+  to {opacity: 1;}
+}
